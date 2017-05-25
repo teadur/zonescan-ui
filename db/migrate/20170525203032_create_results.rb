@@ -5,7 +5,7 @@ class CreateResults < ActiveRecord::Migration[5.1]
       t.timestamp :time
       t.integer :http_code
       t.string :dns
-      t.bool :https
+      t.boolean :https
       t.integer :runid
       t.string :status
 

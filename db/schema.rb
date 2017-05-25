@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525023007) do
+ActiveRecord::Schema.define(version: 20170525203032) do
+
+  create_table "results", force: :cascade do |t|
+    t.string "name"
+    t.datetime "time"
+    t.integer "http_code"
+    t.string "dns"
+    t.boolean "https"
+    t.integer "runid"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "scans", force: :cascade do |t|
     t.string "name"
