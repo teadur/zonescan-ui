@@ -3,6 +3,10 @@ require 'test_helper'
 class DomainsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @domain = domains(:one)
+    @update = {
+        name: 'google.ee',
+        lastrun: 0
+    }
   end
 
   test "should get index" do
@@ -17,7 +21,7 @@ class DomainsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create domain" do
     assert_difference('Domain.count') do
-      post domains_url, params: { domain: { lastrun: @domain.lastrun, name: @domain.name } }
+      post domains_url, params: { domain: @update }
     end
 
     assert_redirected_to domain_url(Domain.last)
@@ -34,7 +38,7 @@ class DomainsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update domain" do
-    patch domain_url(@domain), params: { domain: { lastrun: @domain.lastrun, name: @domain.name } }
+    patch domain_url(@domain), params: { domain: @update }
     assert_redirected_to domain_url(@domain)
   end
 
