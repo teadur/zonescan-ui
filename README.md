@@ -9,6 +9,8 @@ Things you may want to cover:
 
 * System dependencies
 
+   apt-get install libcurl-dev   
+
 * Configuration
 
 * Database creation
