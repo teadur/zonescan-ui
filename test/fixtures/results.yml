@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  time: 2017-05-25 23:27:43
+  http_code: 1
+  dns: MyString
+  https: 
+  runid: 1
+
+two:
+  name: MyString
+  time: 2017-05-25 23:27:43
+  http_code: 1
+  dns: MyString
+  https: 
+  runid: 1
