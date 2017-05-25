@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Domain.delete_all
+Result.delete_all
+Domain.create(name: 'internet.ee', lastrun:0)
+Domain.create(name: 'eis.ee', lastrun:0)
+Domain.create(name: 'tld.ee', lastrun:0)
+
+
+
