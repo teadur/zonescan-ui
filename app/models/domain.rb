@@ -1,5 +1,5 @@
 class Domain < ApplicationRecord
-  # has_many :result
+  has_many :result
   validates :name, presence: true
   validates :name, uniqueness: true
 end

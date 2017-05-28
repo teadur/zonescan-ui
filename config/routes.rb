@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :results
   resources :scans
   get 'scan_all', to: 'scans#all_scan'
+
   # get '/scans/test', to: 'scans#test'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

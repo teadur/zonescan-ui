@@ -1,6 +1,7 @@
 class ResultsController < ApplicationController
   before_action :set_result, only: [:show, :edit, :update, :destroy]
 
+
   # GET /results
   # GET /results.json
   def index
@@ -17,6 +18,11 @@ class ResultsController < ApplicationController
     @result = Result.new
   end
 
+  # Add results to db from scan
+  # def add
+      # @result = Result.new(item)
+ #  end
+
   # GET /results/1/edit
   def edit
   end
@@ -28,6 +34,7 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       if @result.save
+        puts "proovin salvestada"
         format.html { redirect_to @result, notice: 'Result was successfully created.' }
         format.json { render :show, status: :created, location: @result }
       else

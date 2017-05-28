@@ -22,11 +22,23 @@ class ScansController < ApplicationController
   def all_scan
     # @scan = Scan.all_scan
     @scan = Scan.new
+    # @run = scan_domains(@domains)
     # @domains = "scan_all.ee"
-  end
+    ap @run
+    @completed = @run[0]
+    @completed.each do |entry|
+      entry[:http_code] = entry.delete :rcode
+      entry[:dns] = "resolves"
+      # entry[:runid] = 1
+      entry[:status] = "OK"
+      entry[:id] = 1
+      entry[:https] = false
+      # entry[:created_at] = Time.now
+      # entry[:updated_at] = Time.now
+      pp entry
+      Result.add(entry)
+    end
 
-  def test
-     # @scans = Scan.all
   end
 
   # GET /scans/1/edit
@@ -81,9 +93,30 @@ class ScansController < ApplicationController
 
     # Get all domains
     def get_all_domains
-      @domains = Domain.all
+      list = Domain.all
+      @names = ""
+      unless list.nil?
+        # puts list[0].name
+        list.each do |item|
+           puts item.name
+          @names += "#{item.name},"
+
+        end
+      end
+      scan_domains()
     end
 
+
+    # Scan domains
+    # TODO: allow only admin to scan all domains
+  def scan_domains()
+    # TODO: move execution to different method
+    @run = Zonescan.run(nil,@names)
+    # run = Zonescan.run(nil,'neti.ee,google.ee,mail.ee,123feil.ee')
+    puts "jooks: #{@run.inspect}"
+    ap @run
+
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scan_params
