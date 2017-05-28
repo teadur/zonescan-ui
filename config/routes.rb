@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'public/index'
+
   resources :domains
   resources :results
   resources :scans
