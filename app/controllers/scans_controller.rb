@@ -21,17 +21,24 @@ class ScansController < ApplicationController
 
   def all_scan
     # @scan = Scan.all_scan
-    @scan = Scan.new
+    @scan = Scan.new(name: "testime")
+
     # @run = scan_domains(@domains)
     # @domains = "scan_all.ee"
     ap @run
     @completed = @run[0]
+    @failed = @run[1]
+    @totaltime = @run[2]
+    pp @scan
+    @scan.time = @totaltime
+    @scan.save
+
     @completed.each do |entry|
       entry[:http_code] = entry.delete :rcode
       entry[:dns] = "resolves"
       # entry[:runid] = 1
       entry[:status] = "OK"
-      entry[:id] = 1
+      # entry[:id] = 1
       entry[:https] = false
       # entry[:created_at] = Time.now
       # entry[:updated_at] = Time.now
