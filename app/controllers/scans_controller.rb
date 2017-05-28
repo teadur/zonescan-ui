@@ -1,5 +1,6 @@
 class ScansController < ApplicationController
   before_action :set_scan, only: [:show, :edit, :update, :destroy]
+  before_action :get_all_domains, only: [:all_scan]
 
   # GET /scans
   # GET /scans.json
@@ -20,11 +21,12 @@ class ScansController < ApplicationController
 
   def all_scan
     # @scan = Scan.all_scan
-    @domains = "scan_all.ee"
+    @scan = Scan.new
+    # @domains = "scan_all.ee"
   end
 
   def test
-    @scans = Scan.all
+     # @scans = Scan.all
   end
 
   # GET /scans/1/edit
@@ -76,6 +78,12 @@ class ScansController < ApplicationController
     def set_scan
       @scan = Scan.find(params[:id])
     end
+
+    # Get all domains
+    def get_all_domains
+      @domains = Domain.all
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scan_params

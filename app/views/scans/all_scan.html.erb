@@ -1,5 +1,9 @@
 <h1>All Scan</h1>
 
-<%= render 'form', scan: @scan %>
-Domeenid: <%= @domains %> <p></p>
+Domeenid:
+<% @domains.each do |domain| %>
+    <%= domain.name %>
+    <% end %>
+
+    <p></p>
 <%= link_to 'Back', scans_path %>
