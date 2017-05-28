@@ -20,23 +20,26 @@ class ScansController < ApplicationController
   end
 
   def all_scan
+    ap @run
     # @scan = Scan.all_scan
-    @scan = Scan.new(name: "testime")
+    id = Scan.maximum(:id).next
+    @totaltime = @run[2]
+    @scan = Scan.new(id: id, name: "testime", time: @totaltime)
 
     # @run = scan_domains(@domains)
     # @domains = "scan_all.ee"
     ap @run
     @completed = @run[0]
     @failed = @run[1]
-    @totaltime = @run[2]
     pp @scan
+    pp @totaltime
     @scan.time = @totaltime
     @scan.save
-
+    # pp a = Result.new
     @completed.each do |entry|
       entry[:http_code] = entry.delete :rcode
       entry[:dns] = "resolves"
-      # entry[:runid] = 1
+      entry[:runid] = id
       entry[:status] = "OK"
       # entry[:id] = 1
       entry[:https] = false

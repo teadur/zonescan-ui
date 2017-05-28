@@ -1,7 +1,9 @@
 class Result < ApplicationRecord
-  has_many :domain
-  belongs_to :scan
-  # validates :name, :runid, :status, presence: true
+  # belongs_to :domain
+  # belongs_to :scan
+  has_one :domain
+  has_one :scan
+  validates :name, :runid, :status, presence: true
 
   def self.add(item=nil)
     result = Result.new(item)
