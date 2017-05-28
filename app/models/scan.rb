@@ -2,6 +2,8 @@ require 'zonescan'
 require 'awesome_print'
 
 class Scan < ApplicationRecord
+  has_many :results
+  has_many :domains
 # TODO: to return to object the response must be hash
 # run = new Zonescan.run(nil,'neti.ee,google.ee,mail.ee,123feil.ee')
 # for now lets return response hashes 0 Completed 1 Failed 2 Totaltime

@@ -1,2 +1,12 @@
-<h1>Public#index</h1>
-<p>Find me in app/views/public/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+<h1>Public results view</h1>
+
+<% @results.each do |result| %>
+  <div class="entry">
+    <%= result.name %>
+    <div class="status_line">
+      <span class="status"><%= result.status %></span>
+    </div>
+  </div>
+
+<% end %>

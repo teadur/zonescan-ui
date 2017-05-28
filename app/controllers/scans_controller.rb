@@ -15,6 +15,16 @@ class ScansController < ApplicationController
   # GET /scans/new
   def new
     @scan = Scan.new
+    @domains = "12345.ee"
+  end
+
+  def all_scan
+    # @scan = Scan.all_scan
+    @domains = "scan_all.ee"
+  end
+
+  def test
+    @scans = Scan.all
   end
 
   # GET /scans/1/edit
