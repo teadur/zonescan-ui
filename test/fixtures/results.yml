@@ -1,19 +1,28 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: internet.ee
   time: 2017-05-25 23:30:32
-  http_code: 1
-  dns: MyString
-  https: 
+  http_code: 200
+  dns: resolves
+  https: no
   runid: 1
-  status: MyString
+  status: OK
 
 two:
-  name: MyString
+  name: eis.ee
   time: 2017-05-25 23:30:32
-  http_code: 1
-  dns: MyString
-  https: 
+  http_code: 200
+  dns: resolves
+  https: no
   runid: 1
-  status: MyString
+  status: OK
+
+broken_resolve:
+  name: 123feil.ee
+  time: 2017-05-25 23:30:32
+  http_code: NO
+  dns: doesnot resolve
+  https: no
+  runid: 1
+  status: failed
