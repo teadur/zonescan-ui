@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'public/index'
+  # get 'public/index'
+  root 'public#index', as: 'public_index'
 
   resources :domains
   resources :results
