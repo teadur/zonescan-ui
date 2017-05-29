@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Scans</h1>
+<h1 class="text">Scans</h1>
 
 <table>
   <thead>
-    <tr>
+    <tr class="text">
       <th>Name</th>
       <th>Time</th>
       <th>Result</th>
@@ -12,7 +12,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="text">
     <% @scans.each do |scan| %>
       <tr class="scanlist">
         <td><%= scan.name %></td>

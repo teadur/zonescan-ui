@@ -2,9 +2,14 @@
 <h1>Public results view</h1>
 
 <% @results.each do |result| %>
-  <div class="entry">
+    <p></p>
+  <div class="redtext">
     <%= result.name %>
     <div class="status_line">
+      <span class="text"><%= result.http_code %></span>
+      <span class="text"><%= result.https %></span>
+      <span class="text"><%= result.dns %></span>
+      <span class="status"><%= result.time %></span>
       <span class="status"><%= result.status %></span>
     </div>
   </div>

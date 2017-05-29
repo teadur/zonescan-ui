@@ -11,13 +11,23 @@
     border-bottom: 3px dotted #77d
   }
 
-  .enty {
+  .entry2 {
     overflow: auto;
     margin-top: 1em;
     border-bottom: 1px dotted #77d;
     min-height: 100px;
 
   }
+
+  .text {
+    color: #d3f82c;
+  }
+
+  .redtext {
+    color: aqua;
+    font: 100% sans-serif;
+  }
+
 
   p.div.status_line {
     margin-left: 100px;
