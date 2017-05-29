@@ -16,40 +16,40 @@ class ScansController < ApplicationController
   # GET /scans/new
   def new
     @scan = Scan.new
-    @domains = "12345.ee"
+    # @domains = "12345.ee"
   end
 
   def all_scan
-    ap @run
+    # ap @run
     # @scan = Scan.all_scan
     id = Scan.maximum(:id).next
-    @totaltime = @run[2]
-    @scan = Scan.new(id: id, name: "testime", time: @totaltime)
 
+    @scan = Scan.new(id: id, name: "testime", time: @totaltime, result: @scanresult )
+    Scan.process_results(@run,id)
     # @run = scan_domains(@domains)
     # @domains = "scan_all.ee"
-    ap @run
-    @completed = @run[0]
-    @failed = @run[1]
-    pp @scan
-    pp @totaltime
-    @scan.time = @totaltime
-    @scan.save
+    # ap @run
+
+    # pp @scan
+    # pp @totaltime
+    ## @scan.time = @totaltime
+    ##@scan.save
     # pp a = Result.new
-    @completed.each do |entry|
-      entry[:http_code] = entry.delete :rcode
-      entry[:dns] = "resolves"
-      entry[:runid] = id
-      entry[:status] = "OK"
+    # @completed.each do |entry|
+      # entry[:http_code] = entry.delete :rcode
+      # entry[:dns] = "resolves"
+     # entry[:runid] = id
+     # entry[:status] = "OK"
       # entry[:id] = 1
-      entry[:https] = false
+      # entry[:https] = false
       # entry[:created_at] = Time.now
       # entry[:updated_at] = Time.now
-      pp entry
-      Result.add(entry)
-    end
+      #pp entry
+      #Result.add(entry)
+    # end
 
   end
+
 
   # GET /scans/1/edit
   def edit
@@ -115,6 +115,7 @@ class ScansController < ApplicationController
       end
       scan_domains()
     end
+
 
 
     # Scan domains

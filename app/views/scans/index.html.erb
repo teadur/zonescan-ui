@@ -8,13 +8,13 @@
       <th>Name</th>
       <th>Time</th>
       <th>Result</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @scans.each do |scan| %>
-      <tr>
+      <tr class="scanlist">
         <td><%= scan.name %></td>
         <td><%= scan.time %></td>
         <td><%= scan.result %></td>

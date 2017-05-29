@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/teadur/zonescan
-  revision: ac2532a760829f5124e14963c2bc8e88d5e353b5
+  revision: 0a0fa83dc45005435475a070c9082147efcfe87a
   specs:
-    zonescan (0.0.1)
+    zonescan (0.0.4)
       curb
 
 GEM
@@ -95,7 +95,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.2)
     multi_json (1.12.1)
-    nio4r (2.0.0)
+    nio4r (2.1.0)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     parallel (1.11.2)
@@ -190,7 +190,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
-    xpath (2.0.0)
+    xpath (2.1.0)
       nokogiri (~> 1.3)
 
 PLATFORMS
