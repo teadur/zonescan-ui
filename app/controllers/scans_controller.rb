@@ -23,8 +23,11 @@ class ScansController < ApplicationController
     # ap @run
     # @scan = Scan.all_scan
     id = Scan.maximum(:id).next
-
+    @totaltime = @run[2]
+    @scanresult = @run[3]
     @scan = Scan.new(id: id, name: "testime", time: @totaltime, result: @scanresult )
+    @scan.save
+
     Scan.process_results(@run,id)
     # @run = scan_domains(@domains)
     # @domains = "scan_all.ee"
@@ -33,7 +36,6 @@ class ScansController < ApplicationController
     # pp @scan
     # pp @totaltime
     ## @scan.time = @totaltime
-    ##@scan.save
     # pp a = Result.new
     # @completed.each do |entry|
       # entry[:http_code] = entry.delete :rcode
