@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   # get 'public/index'
   root 'public#index', as: 'public_index'
 
