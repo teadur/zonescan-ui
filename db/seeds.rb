@@ -7,9 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Domain.delete_all
 Result.delete_all
+User.delete_all
+Scan.delete_all
 Domain.create(name: 'internet.ee', lastrun:0)
 Domain.create(name: 'eis.ee', lastrun:0)
 Domain.create(name: 'tld.ee', lastrun:0)
 User.create(name: 'user', password: 'user', email:'user@domain.tld')
+Scan.create(id:1, name:"seed scan", time:'1',result:'seed') 
 
 
