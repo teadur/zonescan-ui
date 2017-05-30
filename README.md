@@ -1,8 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
+Web interface for running zonescan (cli gem).
+Generate domain list, commence Scans and save the Results to sqlite database
+Default login is: user:user
 
 
 * Ruby version
@@ -11,7 +11,7 @@ application up and running.
 
 * System dependencies
 
-   apt-get install libcurl-dev   
+   apt-get install  libcurl4-gnutls-dev libsqlite3-dev nodejs
 
 * Configuration
 
