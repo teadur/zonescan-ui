@@ -7,7 +7,8 @@
 # Ignore bundler config.
 /.bundle
 /.idea
-
+/.config/secrets.yml
+/public/assets
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal

@@ -10,6 +10,6 @@ Result.delete_all
 Domain.create(name: 'internet.ee', lastrun:0)
 Domain.create(name: 'eis.ee', lastrun:0)
 Domain.create(name: 'tld.ee', lastrun:0)
-
+User.create(name: 'user', password: 'user', email:'user@domain.tld')
 
 
