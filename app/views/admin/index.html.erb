@@ -1,4 +1,5 @@
 <h1>Admin interface</h1>
+<div class="kollane">
 It's <%= Time.now %>
 
 <p>We have <%= pluralize(@total_domains, "domain") %></p>
@@ -6,3 +7,4 @@ It's <%= Time.now %>
 <p>We have <%= pluralize(@total_results, "result") %></p>
 <p>Add new domain:<%= link_to 'New Domain', new_domain_path %></p>
 <p>Scan all domains now: <%= link_to 'Scan all',  scan_all_path  %></p>
+</div>
